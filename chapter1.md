@@ -15,3 +15,5 @@ python3
 下載：https://www.jetbrains.com/pycharm/
 
 Pycharm 是 Python 的 IDE 開發環境，就好比 Java 使用 Eclipse 一樣。
+
+![](/assets/img1-2.png)
