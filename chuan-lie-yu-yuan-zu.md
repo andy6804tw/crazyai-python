@@ -41,9 +41,28 @@ print(array[1:3])
 print(array[-1]) # index -1 = 4
 ```
 
-> output: 
+        > output: 
 [2, 3]
 [5]
 
-- 
+- 串列呼叫方法
+```py
+array=[1,2,3,4,5]
+print(array)
+array.append(7) # 在串列最尾插入值
+print(array)
+array.insert(5,6) # 在指定索引位置插入值
+print(array)
+```
+        > output:
+[1, 2, 3, 4, 5]
+[1, 2, 3, 4, 5, 7]
+[1, 2, 3, 4, 5, 6, 7]
 
+- 刪除指定元素
+```py
+array=[1,2,3,4,5]
+del array[0] # 刪除指定元素
+print(array)
+```
+        > output: [2, 3, 4, 5]
