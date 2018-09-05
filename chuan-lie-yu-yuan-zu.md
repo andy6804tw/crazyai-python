@@ -66,3 +66,34 @@ del array[0] # 刪除指定元素
 print(array)
 ```
         > output: [2, 3, 4, 5]
+
+## 字典 Dictionary
+在 Python 中 Dictionary 就很像是 Java 中的 HashMap 簡單來說一個鍵(key)對應到一個值(value)。
+
+- 建立一個 Dictionary 物件
+```py
+# 建立一個 Dictionary 物件
+person=dict(name="Andy",age=12)
+print(person["age"]) # 12
+print(person) # {'name': 'Andy', 'age': 12}
+```
+
+- 新增或修改一筆資料
+```py
+person=dict(name="Andy",age=12)
+person["age"]=22 # 新增或修改一筆資料
+print(person) # {'name': 'Andy', 'age': 22}
+```
+
+- 刪除一筆資料
+```py
+person=dict(name="Andy",age=12)
+del person["age"] # 刪除一筆資料
+print(person) # {'name': 'Andy'}
+```
+
+- 查詢某 key 是否存在
+```py
+person=dict(name="Andy",age=12)
+print(name in person)
+```
