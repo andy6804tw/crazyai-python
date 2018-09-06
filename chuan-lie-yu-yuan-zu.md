@@ -88,3 +88,32 @@ print(person) # {'name': 'Andy'}
 person=dict(name="Andy",age=12)
 print("name" in person) # True
 ```
+
+## Object Type
+
+- 可改變數值的
+        - List,Dictionary
+
+下面以 List 舉例，`id()`可以將此變數記憶體位置顯示出來，`type()`則可以顯示該變數的型態，以下範例你會發現將 List 新增一筆資料後他的記憶體位置依然不變`(每一台電腦每次宣告的記憶體位置都不同)`。
+
+```py
+ages=[1,12,15]
+print(id(ages)) # 4409536392
+ages.append(20)
+print(id(ages)) # 4409536392
+print(type(ages)) # <class 'list'>
+```   
+        
+        
+- 不可改變數值的
+        - Int,Float,String,Tuple
+        
+你可能會遲疑為什麼這些會是不可改變的呢？我們宣告一個變數並修改數值觀察以下記憶體位置。
+
+```py
+age=20
+print(id(age)) # 4492803680
+age=22
+print(id(age)) # 4492803744
+print(type(age)) # <class 'int'>
+```
