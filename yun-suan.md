@@ -45,3 +45,18 @@ y=0b101
 print(x&y) # 5
 print(x|y) # 7
 ```
+
+## 布林運算子 boolean operations
+在程式語言中布林運算扮演很重要角色，任何物件都可以用來作為真值判斷，可以應用在 `if...else` 或迴圈中，在以下範例中我們可以用 `and(&)` 與 `or(|)` 運算子來做真假運算。
+
+```py
+x=True
+y=False
+
+print(x and y) # False
+print(x or y) # True
+print(3>5) # False
+print(3<5) # True
+```
+
+## 運算優先 priorites
