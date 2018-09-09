@@ -66,3 +66,31 @@ print(3<5) # True
 print(3+10*5) # 53
 print((3+10)*5) # 65
 ```
+
+## 型態轉換 Convert between Data Type
+在 Python 中轉換任何型態非常方便，內建提供函式快速可以將字串轉成任何型態或是將任何型態轉成字串。
+
+```py
+x="10"
+print(type(x)) # <class 'str'>
+# 字串轉整數型態
+xInt=int(x)
+print(type(xInt)) # <class 'int'>
+# 字串轉浮點數型態
+xFloat=float(x)
+print(type(xFloat)) # <class 'float'>
+# 整數轉字串型態
+y=10
+yStr=str(y)
+print(type(yStr)) # <class 'str'>
+```
+
+在 Python 中所有的型態包括如下：
+- str
+- int
+- float
+- long
+- list
+- set()
+- dict()
+- tuple()
