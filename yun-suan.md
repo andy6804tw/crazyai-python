@@ -46,3 +46,17 @@ print(x&y) # 5
 print(x|y) # 7
 ```
 
+## 小試身手
+請寫出一個程式能夠輸入使用者出生西元年並計算出目前幾歲，使用 `datetime
+` 函式庫並使用 `input` 方法提取使用者輸入。
+
+```py
+import datetime
+DOB=input("Enter your DOB:")
+CurrentYear=datetime.datetime.now().year
+Age=CurrentYear-int(DOB)
+print("Your age is {}".format(Age))
+```
+
+![](/assets/img4-1.png)
+
