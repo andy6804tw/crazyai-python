@@ -40,3 +40,30 @@ print("Good bye!")
 ```
 
 ![](/assets/img6-3.png)
+
+## Break and Continue
+此兩個關鍵字只出現於迴圈當中使用，`break` 顧名思義就是馬上終止跳出迴圈，而 `continue` 就是直接跳過執行下一個迴圈內容所以 `continue` 之後的內容就不會執行到。
+
+第一個範例是字串走訪，當遇到 `t` 時就 `break` 跳出迴圈不繼續走訪剩餘字元。
+
+```py
+word="Python"
+for letter in word:
+    if (letter == 't'):
+        break;
+    print(letter)
+```
+
+![](/assets/img6-4.png)
+
+第二個範例跟第一個類似只是將 `break` 改成 `continue`，執行後你會發現字元 `t` 跳過並無被印出來，由此可證當執行 `continue` 時會直接跳過並執行下一個新的程序。
+
+```py
+word="Python"
+for letter in word:
+    if (letter == 't'):
+        continue;
+    print(letter)
+```
+
+![](/assets/img6-5.png)
