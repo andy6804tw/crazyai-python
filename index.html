@@ -1,0 +1,765 @@
+
+
+
+
+<!doctype html>
+<html lang="zh-Hant" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+        <meta name="author" content="10程式中">
+      
+      
+        <meta name="lang:clipboard.copy" content="複製">
+      
+        <meta name="lang:clipboard.copied" content="已複製">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="沒有符合的項目">
+      
+        <meta name="lang:search.result.one" content="找到 1 個符合的項目">
+      
+        <meta name="lang:search.result.other" content="找到 # 個符合的項目">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>全民瘋AI系列 [Python從零開始]</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/application.0284f74d.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/application-palette.01803549.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#03a9f4">
+      
+    
+    
+      <script src="assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="light-blue" data-md-color-accent="yellow">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#ai-python" tabindex="1" class="md-skip">
+        跳轉到
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="." title="全民瘋AI系列 [Python從零開始]" class="md-header-nav__button md-logo">
+          
+            <img src="assets/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            全民瘋AI系列 [Python從零開始]
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            打字進行搜尋
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/andy6804tw/crazyai-python" title="前往倉庫" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="." title="全民瘋AI系列 [Python從零開始]" class="md-nav__button md-logo">
+      
+        <img src="assets/logo.png" width="48" height="48">
+      
+    </a>
+    全民瘋AI系列 [Python從零開始]
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/andy6804tw/crazyai-python" title="前往倉庫" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      環境設定
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        環境設定
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="1.環境安裝指南/" title="1.環境安裝指南" class="md-nav__link">
+      1.環境安裝指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="1.1.Google Colab介紹/" title="1.3.Google Colab：適合 Python 初學者的雲端開發環境" class="md-nav__link">
+      1.3.Google Colab：適合 Python 初學者的雲端開發環境
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="1.2.Anaconda介紹與安裝/" title="1.1.Anaconda介紹與安裝" class="md-nav__link">
+      1.1.Anaconda介紹與安裝
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="1.3.Miniconda介紹與安裝/" title="1.2.Miniconda介紹與安裝" class="md-nav__link">
+      1.2.Miniconda介紹與安裝
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      基礎語法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        基礎語法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="2.變數與基本運算/" title="2.變數與基本運算" class="md-nav__link">
+      2.變數與基本運算
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="3.資料型態與轉換/" title="3.資料型態與轉換" class="md-nav__link">
+      3.資料型態與轉換
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="4.條件判斷敘述/" title="4.條件判斷敘述" class="md-nav__link">
+      4.條件判斷敘述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="5.迴圈/" title="5.迴圈" class="md-nav__link">
+      5.迴圈
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="6.串列的基本用法/" title="6.串列的基本用法" class="md-nav__link">
+      6.串列的基本用法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="7.函式/" title="7.函式" class="md-nav__link">
+      7.函式
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      進階概念
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        進階概念
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="8.類別/" title="8.類別" class="md-nav__link">
+      8.類別
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="9.模組/" title="9.模組" class="md-nav__link">
+      9.模組
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="10.錯誤與例外處理/" title="10.錯誤與例外處理" class="md-nav__link">
+      10.錯誤與例外處理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="11.產生器/" title="11.產生器" class="md-nav__link">
+      11.產生器
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      常用內建函式庫
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        常用內建函式庫
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="12.隨機數random/" title="12.隨機數random" class="md-nav__link">
+      12.隨機數random
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="13.數學math/" title="13.數學math" class="md-nav__link">
+      13.數學math
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="14.日期和時間datetime/" title="14.日期和時間datetime" class="md-nav__link">
+      14.日期和時間datetime
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="15.正規表示式re/" title="15.正規表示式re" class="md-nav__link">
+      15.正規表示式re
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="16.檔案處理os/" title="16.檔案處理os" class="md-nav__link">
+      16.檔案處理os
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      資料處理
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        資料處理
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="17.Numpy/" title="17.Numpy" class="md-nav__link">
+      17.Numpy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="18.Pandas/" title="18.Pandas" class="md-nav__link">
+      18.Pandas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="19.Matplotlib/" title="19.Matplotlib" class="md-nav__link">
+      19.Matplotlib
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">本頁目錄</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python" title="關於 Python" class="md-nav__link">
+    關於 Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python_1" title="Python 名稱的由來" class="md-nav__link">
+    Python 名稱的由來
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python_2" title="Python 的特色" class="md-nav__link">
+    Python 的特色
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python_3" title="Python 可以做什麼？" class="md-nav__link">
+    Python 可以做什麼？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python_4" title="Python 學習地圖" class="md-nav__link">
+    Python 學習地圖
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="ai-python">全民瘋AI系列 [Python從零開始]</h1>
+<h2 id="python">關於 Python</h2>
+<p>Python 是當今世界上最流行且廣泛使用的程式語言之一，以其簡單易學和強大功能而著稱。無論是初學者還是專業開發者，Python 都是一個理想的選擇，因為它能夠應用於各種領域，從網路開發到資料科學，甚至是人工智慧和機器學習。</p>
+<p><img alt="" src="image/img1-1.png" /></p>
+<h2 id="python_1">Python 名稱的由來</h2>
+<p>Python 的創造者是荷蘭的程式設計師吉多·范羅蘇姆 (Guido van Rossum)。1989 年的聖誕節期間，他決定花三個月的時間設計一種新的程式語言，旨在解決當時一些程式語言的缺點。這個專案後來成為了 Python。名字的靈感來自於吉多非常喜愛的一個英國電視喜劇團體——蒙提·派森 (Monty Python)，因此他決定將這個語言命名為 "Python"。</p>
+<h2 id="python_2">Python 的特色</h2>
+<p>Python 是一種功能強大的直譯式、高階通用程式語言。它支援多種程式設計範式，包括結構化、程序式、物件導向、函數式和反射式編程。Python 採用動態型別系統和自動記憶體管理，使得開發者無需過於關注低層次的細節，而能專注於實現程式的邏輯。</p>
+<ul>
+<li>簡潔易讀: Python 的語法設計非常簡潔，讓程式碼的可讀性和維護性極高，適合初學者快速上手。</li>
+<li>強大的社群支援: 擁有全球活躍的開發者社群，提供豐富的資源和支持，無論是學習還是解決問題，都能找到合適的答案。</li>
+<li>龐大的標準庫: Python 的標準庫涵蓋了從網路、文件處理到資料庫管理、GUI 開發等各個方面，為開發者提供了多種開箱即用的功能。</li>
+<li>豐富的第三方庫: 無論你需要進行資料科學分析、網路開發，還是構建人工智慧模型，都能找到合適的第三方庫來加速開發。</li>
+<li>應用範圍廣泛: Python 被廣泛應用於資料科學、自動化測試、網站開發、軟體開發、商業應用、多媒體處理等領域，是一個真正的通用語言。</li>
+</ul>
+<h2 id="python_3">Python 可以做什麼？</h2>
+<p>Python 的應用領域極其廣泛，以下是一些主要的應用場景：</p>
+<ul>
+<li>網路爬蟲與資訊擷取: 利用 Python 可以輕鬆構建網路爬蟲，從網站上自動擷取資料，並進行後續處理。</li>
+<li>數據處理與視覺化: Python 提供了如 Pandas、NumPy 和 Matplotlib 等強大的工具，用於數據處理、分析與視覺化展示。</li>
+<li>機器學習與人工智慧: Python 是構建機器學習模型和人工智慧應用的主流語言，擁有如 TensorFlow、PyTorch 等多種框架。</li>
+<li>自動化測試: 利用 Python 可以進行軟體測試自動化，節省大量人力和時間。</li>
+<li>網站開發: Django 和 FastAPI 等 Python 框架使得網站開發變得簡單而高效。</li>
+<li>軟體開發: Python 不僅適合小型應用開發，也能支撐大型軟體項目，具備極高的可擴展性。</li>
+<li>商業應用: Python 在商業領域中廣泛應用，從ERP系統到金融分析，均有它的身影。</li>
+<li>多媒體應用: Python 可用於音訊、視訊處理，甚至是圖像生成與編輯，提供了豐富的多媒體處理工具。</li>
+</ul>
+<h2 id="python_4">Python 學習地圖</h2>
+<p>這張學習地圖作為一個指南，提供了學習Python的系統化路徑。根據這個地圖，你可以有條理地學習Python，從基礎到進階，逐步掌握這門強大的程式語言。</p>
+<p><img alt="" src="python-stracture.png" /></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2018 - 2024 10程式中
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/application.245445c6.js"></script>
+      
+        
+        
+          
+          <script src="assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      
+        <script src="javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
