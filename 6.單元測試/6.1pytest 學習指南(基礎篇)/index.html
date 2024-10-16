@@ -966,6 +966,11 @@
 <td><code>pytest -x</code></td>
 </tr>
 <tr>
+<td><code>--tb=short</code></td>
+<td>縮短錯誤的 traceback 訊息，讓報告更簡潔</td>
+<td><code>pytest --tb=short</code></td>
+</tr>
+<tr>
 <td><code>--maxfail=&lt;num&gt;</code></td>
 <td>遇到指定數量的測試失敗後停止執行測試</td>
 <td><code>pytest --maxfail=2</code></td>
@@ -1010,6 +1015,11 @@
 
 <p>這樣測試完成後，pytest 會在專案目錄下生成一個 report.html，裡面包含測試結果的詳細報告。</p>
 <p><img alt="產生HTML報表" src="" /></p>
+<p>上述方法生成的報告，CSS 是獨立的，當分享報告時樣式可能會遺失。為了更好地分享並通過郵件展示報告，可以將 CSS 樣式合併到 HTML 中。</p>
+<div class="codehilite"><pre><span></span>pytest<span class="w"> </span>--html<span class="o">=</span>report.html<span class="w"> </span>--self-contained-html
+</pre></div>
+
+
 <h2 id="pytest_2">使用 pytest 的進階功能</h2>
 <p>pytest 常用標記</p>
 <table>
