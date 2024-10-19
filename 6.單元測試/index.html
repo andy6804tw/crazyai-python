@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://andy6804tw.github.io/crazyai-python/5.迴圈/">
+        <link rel="canonical" href="https://andy6804tw.github.io/crazyai-python/6.單元測試/">
       
       
         <meta name="author" content="10程式中">
@@ -40,7 +40,7 @@
     
     
       
-        <title>5.迴圈 - 全民瘋AI系列 [Python從零開始]</title>
+        <title>全民瘋AI系列 [Python從零開始]</title>
       
     
     
@@ -91,10 +91,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#5" tabindex="1" class="md-skip">
-        跳轉到
-      </a>
-    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -117,7 +113,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                5.迴圈
+                Home
               
             </span>
           
@@ -298,12 +294,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
       2.基礎語法
@@ -355,20 +349,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="5.迴圈" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../5.迴圈/" title="5.迴圈" class="md-nav__link">
       5.迴圈
     </a>
-    
   </li>
 
         
@@ -642,7 +627,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../6.單元測試/6.1pytest 學習指南(基礎篇)/" title="pytest 學習指南(基礎篇)" class="md-nav__link">
+    <a href="6.1pytest 學習指南(基礎篇)/" title="pytest 學習指南(基礎篇)" class="md-nav__link">
       pytest 學習指南(基礎篇)
     </a>
   </li>
@@ -654,7 +639,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../6.單元測試/6.2pytest 學習指南(進階篇)/" title="pytest 學習指南(進階篇)" class="md-nav__link">
+    <a href="6.2pytest 學習指南(進階篇)/" title="pytest 學習指南(進階篇)" class="md-nav__link">
       pytest 學習指南(進階篇)
     </a>
   </li>
@@ -672,28 +657,55 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                <h1 id="5">5.迴圈</h1>
+                  <h1>Home</h1>
+                
+                <table>
+<thead>
+<tr>
+<th>比較面向</th>
+<th>Unittest</th>
+<th>Pytest</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>入門難度</strong></td>
+<td>需要學習 testrunner、testsuite、testcase 等概念，對象導向知識要求高</td>
+<td>隱藏了許多複雜細節，適合初學者，入門門檻更低</td>
+</tr>
+<tr>
+<td><strong>對初學者適合度</strong></td>
+<td>適合有一定 Python 程式基礎的人</td>
+<td>對編程基礎弱的 Python 開發者更為適合</td>
+</tr>
+<tr>
+<td><strong>測試參數化</strong></td>
+<td>需手動實現測試參數化，需撰寫更多樣板代碼來支援不同的測試場景。</td>
+<td>內建測試參數化支援，可使用不同的輸入或配置來執行同一個測試，減少重複程式碼。</td>
+</tr>
+<tr>
+<td><strong>斷言處理</strong></td>
+<td>斷言方法雖然完整但語法較為冗長，錯誤訊息不如 Pytest 詳細。</td>
+<td>提供更具表達力且靈活的斷言處理，<code>assert</code> 語句支援更詳細的錯誤訊息，有助於診斷問題。</td>
+</tr>
+<tr>
+<td><strong>生態系統與社群支持</strong></td>
+<td>社群活躍度一般</td>
+<td>生態系統豐富，插件數量眾多，社群活躍度高，持續維護</td>
+</tr>
+<tr>
+<td><strong>擴展性與插件數量</strong></td>
+<td>插件支持有限</td>
+<td>插件超過 300 個，功能擴展性強</td>
+</tr>
+</tbody>
+</table>
                 
                   
                 
@@ -710,41 +722,6 @@
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../4.條件判斷敘述/" title="4.條件判斷敘述" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  上一頁
-                </span>
-                4.條件判斷敘述
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../6.串列的基本用法/" title="6.串列的基本用法" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  下一頁
-                </span>
-                6.串列的基本用法
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
