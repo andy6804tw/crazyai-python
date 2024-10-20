@@ -434,8 +434,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2.變數與基本運算/" title="2.變數與基本運算" class="md-nav__link">
-      2.變數與基本運算
+    <a href="../../2.基礎語法/2.1變數與基本運算/" title="2.1 變數與基本運算" class="md-nav__link">
+      2.1 變數與基本運算
     </a>
   </li>
 
@@ -446,8 +446,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../3.資料型態與轉換/" title="3.資料型態與轉換" class="md-nav__link">
-      3.資料型態與轉換
+    <a href="../../2.基礎語法/2.2資料型態與轉換/" title="2.2 資料型態與轉換" class="md-nav__link">
+      2.2 資料型態與轉換
     </a>
   </li>
 
@@ -458,8 +458,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../4.條件判斷敘述/" title="4.條件判斷敘述" class="md-nav__link">
-      4.條件判斷敘述
+    <a href="../../2.基礎語法/2.3條件判斷敘述/" title="2.3 條件判斷敘述" class="md-nav__link">
+      2.3 條件判斷敘述
     </a>
   </li>
 
@@ -470,8 +470,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../5.迴圈/" title="5.迴圈" class="md-nav__link">
-      5.迴圈
+    <a href="../../2.基礎語法/2.4迴圈/" title="2.4 迴圈" class="md-nav__link">
+      2.4 迴圈
     </a>
   </li>
 
@@ -482,8 +482,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../6.串列的基本用法/" title="6.串列的基本用法" class="md-nav__link">
-      6.串列的基本用法
+    <a href="../../2.基礎語法/2.5串列的基本用法/" title="2.5 串列的基本用法" class="md-nav__link">
+      2.5 串列的基本用法
     </a>
   </li>
 
@@ -494,8 +494,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../7.函式/" title="7.函式" class="md-nav__link">
-      7.函式
+    <a href="../../2.基礎語法/2.6函式/" title="2.6 函式" class="md-nav__link">
+      2.6 函式
     </a>
   </li>
 
@@ -990,25 +990,35 @@
 </ol>
 </div>
 <h2 id="colab-notebook">Colab Notebook環境介紹</h2>
-<p>如果想建立一個新的空白專案。可以從 <a href="https://colab.research.google.com/">Google Colab</a> 點擊「新建筆記本」即可創建一個新的 Jupyter Notebook，開始你的 Python 開發。</p>
-<p><img alt="" src="https://datasciocean.tech/wp-content/uploads/2022/01/google-colab-1.jpg" /></p>
+<p>Google Colab 是一個非常方便且易於上手的開發環境，特別適合初學者進行 Python 開發。想要建立一個新的空白專案時，只需在 <a href="https://colab.research.google.com/">Google Colab</a> 點擊「新建筆記本」即可創建一個新的 Jupyter Notebook，開始你的 Python 開發。不需要安裝任何軟體，只要有瀏覽器和網路連線，就能輕鬆使用。</p>
+<p>當你進入 Colab 介面後，你會看到以下幾個主要的操作區域：</p>
+<ol>
+<li><strong>檔案名稱</strong>：顯示目前開啟的檔案名稱。</li>
+<li><strong>工具列</strong>：包含各種功能選項，如檔案、編輯、檢視、執行等。</li>
+<li><strong>側邊工具欄</strong>：提供快速存取功能，如檔案管理和程式碼片段。</li>
+<li><strong>儲存格 (Cell)</strong>：顯示並執行程式碼的區域。</li>
+<li><strong>儲存格工具列</strong>：儲存格專屬的操作按鈕，如執行、移動、設定等功能。</li>
+<li><strong>連線狀態</strong>：顯示目前的連線狀態。</li>
+<li><strong>留言與共用</strong>：提供留言與共用功能的選項。</li>
+</ol>
+<p><img alt="" src="/image/img1.2.5.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>開啟 Notebook 後，第一個步驟是點擊<strong>連線(Connect)</strong>以配置專案所需的運算資源。</p>
+</div>
 <h3 id="_1">基本元素</h3>
 <p>在 Google Colaboratory（Colab）中，cell 是 Jupyter Notebook 的基本單位，每個 cell 都可以包含程式碼或文字。Colab 的 Notebook 主要由兩大元素組成：Code（程式碼）cell 和 Text（文字）cell。</p>
-<p><img alt="" src="/image/img1.2.5.png" /></p>
-<p><strong>Code（程式碼）cell</strong>：</p>
-<ul>
-<li>Code cell 用來編寫和執行 Python 程式碼。當你在這個 cell 中輸入程式碼並運行後，Colab 會即時執行該程式，並在下方顯示運行結果。這讓你能夠即時測試程式碼，方便進行開發和學習。</li>
-</ul>
 <p><img alt="" src="/image/img1.2.6.png" /></p>
+<p><strong>Code（程式碼）cell</strong>：</p>
+<p>Code cell 用來編寫和執行 Python 程式碼。當你在這個 cell 中輸入程式碼並運行後，Colab 會即時執行該程式，並在下方顯示運行結果。這讓你能夠即時測試程式碼，方便進行開發和學習。</p>
+<p><img alt="" src="/image/img1.2.7.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>可以直接在程式區塊中輸入 Python 程式碼，並按下 Shift + Enter 鍵執行程式，又或是點選每個cell左側執行按鈕，執行並即時查看運行結果。</p>
 </div>
 <p><strong>Text（文字）cell</strong>：</p>
-<ul>
-<li>Text cell 用來撰寫說明、描述或標註，支援使用 Markdown 語法進行排版。這讓你能夠在 Notebook 中清晰地記錄程式邏輯、步驟或教學內容，讓程式和說明可以融合在一起，便於教學和共享。</li>
-</ul>
-<p><img alt="" src="/image/img1.2.7.png" /></p>
+<p>Text cell 用來撰寫說明、描述或標註，支援使用 Markdown 語法進行排版。這讓你能夠在 Notebook 中清晰地記錄程式邏輯、步驟或教學內容，讓程式和說明可以融合在一起，便於教學和共享。</p>
+<p><img alt="" src="/image/img1.2.8.png" /></p>
 <h3 id="google-drive">連動 Google Drive</h3>
 <p>由於 Colab 是 Google 的服務，因此它能夠方便地與 Google 雲端硬碟整合，讓你可以輕鬆地在 Colab 中新增、刪除或修改檔案。只需簡單幾步，即可將 Colab 與 Google Drive 連動：</p>
 <ol>
@@ -1025,13 +1035,12 @@
 <p><strong>測試連動</strong>：你可以將以下程式碼貼入 Colab，執行後會在雲端硬碟的 Colab Notebooks 資料夾中創建一個名為 test.txt 的文件，內容是「Hello Google Drive!」：</p>
 </li>
 </ol>
+<p><img alt="" src="/image/img1.2.9.png" /></p>
 <h2 id="_2">小結</h2>
 <p>Google Colaboratory 是一個適合 Python 初學者的理想工具，無需配置本地開發環境，簡單易用且具備強大的雲端計算資源。無論是學習 Python 基礎、進行數據分析，還是深入探索機器學習領域，Colab 都能滿足你的需求。最重要的是，它完全免費，讓每個人都能輕鬆入門 Python 編程與 AI 開發。</p>
 <h2 id="_3">延伸閱讀</h2>
 <ul>
 <li><a href="https://medium.com/ai-academy-taiwan/免費雲端jupyter-notebook報哩災-427acf0382b2">免費雲端Jupyter Notebook報你知</a></li>
-<li><a href="https://steam.oxxostudio.tw/category/python/info/online-editor.html#google_vignette">使用 Google Colab</a></li>
-<li><a href="https://datasciocean.tech/python-tutorial/google-colaboratory/#google_vignette">Google Colaboratory 介紹</a></li>
 </ul>
                 
                   

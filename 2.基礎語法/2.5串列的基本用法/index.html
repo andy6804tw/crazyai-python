@@ -10,8 +10,10 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
+        <meta name="description" content="Python basic tip about List">
       
-        <link rel="canonical" href="https://andy6804tw.github.io/crazyai-python/6.單元測試/6.1pytest 學習指南(基礎篇)/">
+      
+        <link rel="canonical" href="https://andy6804tw.github.io/crazyai-python/2.基礎語法/2.5串列的基本用法/">
       
       
         <meta name="author" content="10程式中">
@@ -40,7 +42,7 @@
     
     
       
-        <title>pytest 學習指南(基礎篇) - 全民瘋AI系列 [Python從零開始]</title>
+        <title>2.5 串列的基本用法</title>
       
     
     
@@ -91,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#pytest" tabindex="1" class="md-skip">
+      <a href="#25" tabindex="1" class="md-skip">
         跳轉到
       </a>
     
@@ -117,7 +119,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                pytest 學習指南(基礎篇)
+                2.5 串列的基本用法
               
             </span>
           
@@ -298,10 +300,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       2.基礎語法
@@ -319,7 +323,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2.基礎語法/2.1變數與基本運算/" title="2.1 變數與基本運算" class="md-nav__link">
+    <a href="../2.1變數與基本運算/" title="2.1 變數與基本運算" class="md-nav__link">
       2.1 變數與基本運算
     </a>
   </li>
@@ -331,7 +335,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2.基礎語法/2.2資料型態與轉換/" title="2.2 資料型態與轉換" class="md-nav__link">
+    <a href="../2.2資料型態與轉換/" title="2.2 資料型態與轉換" class="md-nav__link">
       2.2 資料型態與轉換
     </a>
   </li>
@@ -343,7 +347,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2.基礎語法/2.3條件判斷敘述/" title="2.3 條件判斷敘述" class="md-nav__link">
+    <a href="../2.3條件判斷敘述/" title="2.3 條件判斷敘述" class="md-nav__link">
       2.3 條件判斷敘述
     </a>
   </li>
@@ -355,7 +359,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2.基礎語法/2.4迴圈/" title="2.4 迴圈" class="md-nav__link">
+    <a href="../2.4迴圈/" title="2.4 迴圈" class="md-nav__link">
       2.4 迴圈
     </a>
   </li>
@@ -365,11 +369,144 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../2.基礎語法/2.5串列的基本用法/" title="2.5 串列的基本用法" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        2.5 串列的基本用法
+      </label>
+    
+    <a href="./" title="2.5 串列的基本用法" class="md-nav__link md-nav__link--active">
       2.5 串列的基本用法
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">本頁目錄</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#list" title="串列 (List)" class="md-nav__link">
+    串列 (List)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list_1" title="List 插值" class="md-nav__link">
+    List 插值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list_2" title="List 查詢位置" class="md-nav__link">
+    List 查詢位置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list_3" title="List 常見的方法" class="md-nav__link">
+    List 常見的方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list_4" title="List 內建排序" class="md-nav__link">
+    List 內建排序
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="方法一" class="md-nav__link">
+    方法一
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="方法二" class="md-nav__link">
+    方法二
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-0" title="List 初始 0" class="md-nav__link">
+    List 初始 0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list_5" title="迴圈提取 List 所有元素" class="md-nav__link">
+    迴圈提取 List 所有元素
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="方法一" class="md-nav__link">
+    方法一
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="方法二" class="md-nav__link">
+    方法二
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="方法三" class="md-nav__link">
+    方法三
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -379,7 +516,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2.基礎語法/2.6函式/" title="2.6 函式" class="md-nav__link">
+    <a href="../2.6函式/" title="2.6 函式" class="md-nav__link">
       2.6 函式
     </a>
   </li>
@@ -610,12 +747,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
     <label class="md-nav__link" for="nav-6">
       6.單元測試
@@ -631,123 +766,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        pytest 學習指南(基礎篇)
-      </label>
-    
-    <a href="./" title="pytest 學習指南(基礎篇)" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../6.單元測試/6.1pytest 學習指南(基礎篇)/" title="pytest 學習指南(基礎篇)" class="md-nav__link">
       pytest 學習指南(基礎篇)
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">本頁目錄</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="基本操作" class="md-nav__link">
-    基本操作
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-pytest" title="1. 安裝 pytest" class="md-nav__link">
-    1. 安裝 pytest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" title="2. 撰寫一個簡單的測試案例" class="md-nav__link">
-    2. 撰寫一個簡單的測試案例
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" title="3. 執行測試" class="md-nav__link">
-    3. 執行測試
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pytest_1" title="pytest 常用指令選項" class="md-nav__link">
-    pytest 常用指令選項
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#html" title="執行測試並生成 HTML 報告" class="md-nav__link">
-    執行測試並生成 HTML 報告
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pytest_2" title="使用 pytest 的進階功能" class="md-nav__link">
-    使用 pytest 的進階功能
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-pytestfixture" title="(1)  pytest.fixture" class="md-nav__link">
-    (1)  pytest.fixture
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2_1" title="(2) 測試多組輸入" class="md-nav__link">
-    (2) 測試多組輸入
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -757,7 +780,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../6.2pytest 學習指南(進階篇)/" title="pytest 學習指南(進階篇)" class="md-nav__link">
+    <a href="../../6.單元測試/6.2pytest 學習指南(進階篇)/" title="pytest 學習指南(進階篇)" class="md-nav__link">
       pytest 學習指南(進階篇)
     </a>
   </li>
@@ -789,45 +812,52 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="基本操作" class="md-nav__link">
-    基本操作
+  <a href="#list" title="串列 (List)" class="md-nav__link">
+    串列 (List)
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-pytest" title="1. 安裝 pytest" class="md-nav__link">
-    1. 安裝 pytest
+  <a href="#list_1" title="List 插值" class="md-nav__link">
+    List 插值
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2" title="2. 撰寫一個簡單的測試案例" class="md-nav__link">
-    2. 撰寫一個簡單的測試案例
+  <a href="#list_2" title="List 查詢位置" class="md-nav__link">
+    List 查詢位置
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3" title="3. 執行測試" class="md-nav__link">
-    3. 執行測試
+  <a href="#list_3" title="List 常見的方法" class="md-nav__link">
+    List 常見的方法
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#pytest_1" title="pytest 常用指令選項" class="md-nav__link">
-    pytest 常用指令選項
+  <a href="#list_4" title="List 內建排序" class="md-nav__link">
+    List 內建排序
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#html" title="執行測試並生成 HTML 報告" class="md-nav__link">
-    執行測試並生成 HTML 報告
+  <a href="#_1" title="方法一" class="md-nav__link">
+    方法一
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="方法二" class="md-nav__link">
+    方法二
   </a>
   
 </li>
@@ -837,30 +867,44 @@
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#list-0" title="List 初始 0" class="md-nav__link">
+    List 初始 0
+  </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#pytest_2" title="使用 pytest 的進階功能" class="md-nav__link">
-    使用 pytest 的進階功能
+        
+          <li class="md-nav__item">
+  <a href="#list_5" title="迴圈提取 List 所有元素" class="md-nav__link">
+    迴圈提取 List 所有元素
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-pytestfixture" title="(1)  pytest.fixture" class="md-nav__link">
-    (1)  pytest.fixture
+  <a href="#_3" title="方法一" class="md-nav__link">
+    方法一
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2_1" title="(2) 測試多組輸入" class="md-nav__link">
-    (2) 測試多組輸入
+  <a href="#_4" title="方法二" class="md-nav__link">
+    方法二
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="方法三" class="md-nav__link">
+    方法三
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -886,194 +930,142 @@
               
                 
                 
-                <h1 id="pytest">pytest 學習指南(基礎篇)</h1>
-<h2 id="_1">基本操作</h2>
-<p>學習 pytest 可以大幅提升編寫單元測試的效率，並輕鬆整合至 CI/CD 工作流程中。建議從簡單的測試開始，逐步深入探索 pytest 的各種進階功能。</p>
-<h3 id="1-pytest">1. 安裝 pytest</h3>
-<p>在 Python 中使用 pytest 之前，必須先安裝它。可以通過 pip 來安裝：</p>
-<div class="codehilite"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pytest
+                <h1 id="25">2.5 串列的基本用法</h1>
+<p>Python 程式語言非常好上手，以及大量函式庫支援可以減輕程式上的負擔。本篇文章就來統整 Python 程式中常見的使用方法與技巧。這些將會是實戰中常會遇到的問題，例如邏輯控制 (if...else)、迴圈 (for loop)、資料容器中的串列 (List)。</p>
+<h2 id="list">串列 (List)</h2>
+<p>串列是 Python 中最基本的數據結構。序列中的每個元素都分配一個數字- 它的位置，或索引，第一個索引是0，第二個索引是1，依此類推。</p>
+<h3 id="list_1">List 插值</h3>
+<div class="codehilite"><pre><span></span><span class="n">myList</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">myList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;first&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">myList</span><span class="p">)</span>
+<span class="n">myList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;second&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">myList</span><span class="p">)</span>
 </pre></div>
 
 
-<h3 id="2">2. 撰寫一個簡單的測試案例</h3>
-<p>pytest 可以讓你輕鬆撰寫測試案例。假設有一個名為 math_func.py 的檔案，其中有一個簡單的函數：</p>
-<div class="codehilite"><pre><span></span><span class="c1"># math_func.py</span>
-<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<div class="codehilite"><pre><span></span>[&#39;first&#39;]
+[&#39;first&#39;, &#39;second&#39;]
 </pre></div>
 
 
-<p>可以撰寫一個測試檔案，例如 test_math_func.py：</p>
-<div class="codehilite"><pre><span></span><span class="c1"># test_math_func.py</span>
-<span class="kn">from</span> <span class="nn">math_func</span> <span class="kn">import</span> <span class="n">add</span>
-
-<span class="k">def</span> <span class="nf">test_add</span><span class="p">():</span>
-    <span class="k">assert</span> <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
-    <span class="k">assert</span> <span class="n">add</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
-    <span class="k">assert</span> <span class="n">add</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<h3 id="list_2">List 查詢位置</h3>
+<p>尋找元素的索引</p>
+<div class="codehilite"><pre><span></span><span class="n">myList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;box&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Index: &#39;</span><span class="p">,</span> <span class="n">myList</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;box&#39;</span><span class="p">))</span>
 </pre></div>
 
 
-<h3 id="3">3. 執行測試</h3>
-<p>在專案的根目錄下執行 pytest，其中 <code>-v</code> 表示詳細模式，顯示每個測試案例的結果。</p>
-<div class="codehilite"><pre><span></span><span class="n">pytest</span> <span class="o">-</span><span class="n">v</span>
+<div class="codehilite"><pre><span></span>Index:  1
 </pre></div>
 
 
-<p>pytest 會自動偵測以 test_ 開頭的檔案以及以 test_ 開頭的函數並執行它們。結果會詳細地顯示測試過程與結果。</p>
-<p><img alt="成功PASS圖示" src="" /></p>
-<p>pytest 會自動解析錯誤訊息，使得測試失敗時提供更具可讀性的輸出。以下範例手動加入一個失敗的測試，pytest 會清楚告訴你預期值和實際結果的差異。</p>
-<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">test_add_fail</span><span class="p">():</span>
-    <span class="k">assert</span> <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<h3 id="list_3">List 常見的方法</h3>
+<ul>
+<li>len() 回傳長度</li>
+<li>sum() 回傳總和</li>
+<li>max() 回傳最大值</li>
+<li>min() 回傳最小值</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="n">myList</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;長度: &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">myList</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;總和: &#39;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">myList</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;最大值: &#39;</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">myList</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;最小值: &#39;</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">myList</span><span class="p">))</span>
 </pre></div>
 
 
-<p>接著在該目錄下執行 <code>pytest -v</code> 後即可看到這個測試項目有紅色的 fail。</p>
-<p><img alt="失敗圖示" src="" /></p>
-<h3 id="pytest_1">pytest 常用指令選項</h3>
-<table>
-<thead>
-<tr>
-<th>選項</th>
-<th>說明</th>
-<th>用法範例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-v</code></td>
-<td>詳細模式，顯示每個測試案例的結果</td>
-<td><code>pytest -v</code></td>
-</tr>
-<tr>
-<td><code>-s</code></td>
-<td>顯示測試過程中的標準輸出，如 <code>print()</code> 內容</td>
-<td><code>pytest -s</code></td>
-</tr>
-<tr>
-<td><code>-k &lt;expression&gt;</code></td>
-<td>僅運行符合條件的測試案例</td>
-<td><code>pytest -k "test_function_name"</code></td>
-</tr>
-<tr>
-<td><code>-m &lt;mark&gt;</code></td>
-<td>僅運行特定標記的測試案例</td>
-<td><code>pytest -m "slow"</code></td>
-</tr>
-<tr>
-<td><code>-x</code></td>
-<td>首次測試失敗時停止測試執行</td>
-<td><code>pytest -x</code></td>
-</tr>
-<tr>
-<td><code>--tb=short</code></td>
-<td>縮短錯誤的 traceback 訊息，讓報告更簡潔</td>
-<td><code>pytest --tb=short</code></td>
-</tr>
-<tr>
-<td><code>--maxfail=&lt;num&gt;</code></td>
-<td>遇到指定數量的測試失敗後停止執行測試</td>
-<td><code>pytest --maxfail=2</code></td>
-</tr>
-<tr>
-<td><code>--html=&lt;file&gt;</code></td>
-<td>生成 HTML 格式的測試報告（需要 <code>pytest-html</code> 插件）</td>
-<td><code>pytest --html=report.html</code></td>
-</tr>
-<tr>
-<td><code>--junitxml=&lt;file&gt;</code></td>
-<td>生成 JUnit XML 格式的測試報告</td>
-<td><code>pytest --junitxml=report.xml</code></td>
-</tr>
-<tr>
-<td><code>--durations=&lt;num&gt;</code></td>
-<td>列出運行時間最長的 <code>&lt;num&gt;</code> 個測試案例</td>
-<td><code>pytest --durations=5</code></td>
-</tr>
-<tr>
-<td><code>--cov=&lt;module_or_path&gt;</code></td>
-<td>生成程式碼覆蓋率報告（需要 <code>pytest-cov</code> 插件）</td>
-<td><code>pytest --cov=my_module</code></td>
-</tr>
-<tr>
-<td><code>--reuse-db</code></td>
-<td>重新使用上次的資料庫測試環境（適用於測試資料庫環境）</td>
-<td><code>pytest --reuse-db</code></td>
-</tr>
-</tbody>
-</table>
-<h4 id="html">執行測試並生成 HTML 報告</h4>
-<p>我們可以將測試結果直接產生 report.html，只需要安裝 pytest-html 套件。</p>
-<div class="codehilite"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pytest-html
+<div class="codehilite"><pre><span></span>長度:  5
+總和:  30
+最大值:  10
+最小值:  2
 </pre></div>
 
 
-<p>接著執行測試並生成 HTML 報告，使用 --html 選項來指定報告的檔案名稱。此外，也可以同時搭配上方表格中的其他常用指令一起使用，以更靈活地控制測試流程。</p>
-<div class="codehilite"><pre><span></span>pytest<span class="w"> </span>-v<span class="w"> </span>--html<span class="o">=</span>report.html
+<h3 id="list_4">List 內建排序</h3>
+<p>第一種方式是直接呼叫 List 本身的 <code>sort()</code> 函數進行排序，這種方式會直接改變原本的 List 內容。第二種方法使用 <code>sorted()</code>，他會對元素排序之後，傳回一個排序好的新 List，而原本的 List 則不受影響。</p>
+<h4 id="_1">方法一</h4>
+<div class="codehilite"><pre><span></span><span class="n">myList</span> <span class="o">=</span> <span class="p">[</span><span class="mi">33</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">myList</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="c1"># 對原本的 List 排序</span>
+<span class="n">myList</span>
 </pre></div>
 
 
-<p>這樣測試完成後，pytest 會在專案目錄下生成一個 report.html，裡面包含測試結果的詳細報告。</p>
-<p><img alt="產生HTML報表" src="" /></p>
-<p>上述方法生成的報告，CSS 是獨立的，當分享報告時樣式可能會遺失。為了更好地分享並通過郵件展示報告，可以將 CSS 樣式合併到 HTML 中。</p>
-<div class="codehilite"><pre><span></span>pytest<span class="w"> </span>--html<span class="o">=</span>report.html<span class="w"> </span>--self-contained-html
+<div class="codehilite"><pre><span></span>[4, 6, 12, 22, 33, 41]
 </pre></div>
 
 
-<h2 id="pytest_2">使用 pytest 的進階功能</h2>
-<p>pytest 常用標記</p>
-<table>
-<thead>
-<tr>
-<th>標記</th>
-<th>說明</th>
-<th>用法範例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>@pytest.mark.skip</code></td>
-<td>跳過測試案例</td>
-<td><code>@pytest.mark.skip(reason="Not implemented")</code></td>
-</tr>
-<tr>
-<td><code>@pytest.mark.xfail</code></td>
-<td>預期失敗的測試案例</td>
-<td><code>@pytest.mark.xfail(raises=ZeroDivisionError)</code></td>
-</tr>
-<tr>
-<td><code>@pytest.mark.parametrize</code></td>
-<td>參數化測試，允許使用多組參數測試同一函數</td>
-<td><code>@pytest.mark.parametrize("a,b", [(1, 2), (3, 4)])</code></td>
-</tr>
-<tr>
-<td><code>@pytest.fixture</code></td>
-<td>定義測試前置環境</td>
-<td><code>@pytest.fixture</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="1-pytestfixture">(1)  pytest.fixture</h3>
-<p>fixture 可以用來設置測試前的準備步驟，例如初始化資料庫或建立物件：</p>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
-
-<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
-<span class="k">def</span> <span class="nf">sample_data</span><span class="p">():</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span><span class="p">}</span>
-
-<span class="k">def</span> <span class="nf">test_sample_data</span><span class="p">(</span><span class="n">sample_data</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="n">sample_data</span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;value&quot;</span>
+<h4 id="_2">方法二</h4>
+<div class="codehilite"><pre><span></span><span class="n">myList</span> <span class="o">=</span> <span class="p">[</span><span class="mi">33</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">newList</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">myList</span><span class="p">)</span> <span class="c1"># 排序並建立新的 List</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;myList: &#39;</span><span class="p">,</span><span class="n">myList</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;newList:&#39;</span><span class="p">,</span> <span class="n">newList</span><span class="p">)</span>
 </pre></div>
 
 
-<h3 id="2_1">(2) 測試多組輸入</h3>
-<p>可以使用 pytest.mark.parametrize 來測試多組輸入：</p>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
-<span class="kn">from</span> <span class="nn">math_func</span> <span class="kn">import</span> <span class="n">add</span>
+<div class="codehilite"><pre><span></span>myList:  [33, 22, 41, 12, 6, 4]
+newList: [4, 6, 12, 22, 33, 41]
+</pre></div>
 
-<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;a, b, expected&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)])</span>
-<span class="k">def</span> <span class="nf">test_add_multi</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="n">expected</span>
+
+<blockquote>
+<p>sorted 與 sort 也可以處理文字的排序，預設會依照英文字母的順序排列</p>
+</blockquote>
+<h3 id="list-0">List 初始 0</h3>
+<p>假設我們有長度為 10 的串列，需要將裡面所有值做初始化。</p>
+<div class="codehilite"><pre><span></span><span class="n">listofzeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">listofzeros</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+</pre></div>
+
+
+<h3 id="list_5">迴圈提取 List 所有元素</h3>
+<p>假設我們的串列中有 4 個元素，我們想透過迴圈依序地取值。</p>
+<div class="codehilite"><pre><span></span><span class="n">myList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;box&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<h4 id="_3">方法一</h4>
+<div class="codehilite"><pre><span></span><span class="c1"># 方法ㄧ</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">myList</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">myList</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>0 apple
+1 box
+2 cat
+3 dog
+</pre></div>
+
+
+<h4 id="_4">方法二</h4>
+<div class="codehilite"><pre><span></span><span class="c1"># 方法二</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">myList</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>apple
+box
+cat
+dog
+</pre></div>
+
+
+<h4 id="_5">方法三</h4>
+<div class="codehilite"><pre><span></span><span class="c1"># 方法三</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">word</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">myList</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>0 apple
+1 box
+2 cat
+3 dog
 </pre></div>
                 
                   
@@ -1095,7 +1087,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../19.Matplotlib/" title="19.Matplotlib" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../2.4迴圈/" title="2.4 迴圈" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1104,19 +1096,19 @@
                 <span class="md-footer-nav__direction">
                   上一頁
                 </span>
-                19.Matplotlib
+                2.4 迴圈
               </span>
             </div>
           </a>
         
         
-          <a href="../6.2pytest 學習指南(進階篇)/" title="pytest 學習指南(進階篇)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../2.6函式/" title="2.6 函式" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   下一頁
                 </span>
-                pytest 學習指南(進階篇)
+                2.6 函式
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
