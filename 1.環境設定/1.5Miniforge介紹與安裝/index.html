@@ -1,0 +1,1355 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="10程式中">
+      
+      
+        <link rel="canonical" href="https://andy6804tw.github.io/crazyai-python/1.%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A/1.5Miniforge%E4%BB%8B%E7%B4%B9%E8%88%87%E5%AE%89%E8%A3%9D/">
+      
+      
+        <link rel="prev" href="../1.4Miniconda%E4%BB%8B%E7%B4%B9%E8%88%87%E5%AE%89%E8%A3%9D/">
+      
+      
+        <link rel="next" href="../../2.%E5%9F%BA%E7%A4%8E%E8%AA%9E%E6%B3%95/2.1%E8%AE%8A%E6%95%B8%E8%88%87%E5%9F%BA%E6%9C%AC%E9%81%8B%E7%AE%97/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>1.5 Miniforge介紹與安裝 - 全民瘋AI系列 [Python從零開始]</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="yellow">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#miniforge-anaconda" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="../.." title="全民瘋AI系列 [Python從零開始]" class="md-header__button md-logo" aria-label="全民瘋AI系列 [Python從零開始]" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            全民瘋AI系列 [Python從零開始]
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1.5 Miniforge介紹與安裝
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/andy6804tw/crazyai-python" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="全民瘋AI系列 [Python從零開始]" class="md-nav__button md-logo" aria-label="全民瘋AI系列 [Python從零開始]" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    全民瘋AI系列 [Python從零開始]
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/andy6804tw/crazyai-python" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1.環境設定
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            1.環境設定
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.1%E7%92%B0%E5%A2%83%E5%AE%89%E8%A3%9D%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1 環境安裝指南
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.2Google%20Colab%E4%BB%8B%E7%B4%B9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 Google Colab介紹
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.3Anaconda%E4%BB%8B%E7%B4%B9%E8%88%87%E5%AE%89%E8%A3%9D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 Anaconda介紹與安裝
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.4Miniconda%E4%BB%8B%E7%B4%B9%E8%88%87%E5%AE%89%E8%A3%9D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4 Miniconda介紹與安裝
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    1.5 Miniforge介紹與安裝
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    1.5 Miniforge介紹與安裝
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#anacondaminiforge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anaconda商用要收費了怎麼辦?我們可以改用Miniforge!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miniforge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miniforge 簡介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miniforge_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miniforge 安裝與使用教學
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Miniforge 安裝與使用教學">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      下載安裝檔
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miniforge_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用 Miniforge
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      補充說明
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.基礎語法
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            2.基礎語法
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.%E5%9F%BA%E7%A4%8E%E8%AA%9E%E6%B3%95/2.1%E8%AE%8A%E6%95%B8%E8%88%87%E5%9F%BA%E6%9C%AC%E9%81%8B%E7%AE%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 變數與基本運算
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.%E5%9F%BA%E7%A4%8E%E8%AA%9E%E6%B3%95/2.2%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B%E8%88%87%E8%BD%89%E6%8F%9B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 資料型態與轉換
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.%E5%9F%BA%E7%A4%8E%E8%AA%9E%E6%B3%95/2.3%E6%A2%9D%E4%BB%B6%E5%88%A4%E6%96%B7%E6%95%98%E8%BF%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 條件判斷敘述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.%E5%9F%BA%E7%A4%8E%E8%AA%9E%E6%B3%95/2.4%E8%BF%B4%E5%9C%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 迴圈
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.%E5%9F%BA%E7%A4%8E%E8%AA%9E%E6%B3%95/2.5%E4%B8%B2%E5%88%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 串列的基本用法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.%E5%9F%BA%E7%A4%8E%E8%AA%9E%E6%B3%95/2.6%E5%87%BD%E5%BC%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 函式
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3.進階概念
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            3.進階概念
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8.%E9%A1%9E%E5%88%A5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.類別
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../9.%E6%A8%A1%E7%B5%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.模組
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10.%E9%8C%AF%E8%AA%A4%E8%88%87%E4%BE%8B%E5%A4%96%E8%99%95%E7%90%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.錯誤與例外處理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11.%E7%94%A2%E7%94%9F%E5%99%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.產生器
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4.常用內建函式庫
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            4.常用內建函式庫
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12.%E9%9A%A8%E6%A9%9F%E6%95%B8random/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.隨機數random
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13.%E6%95%B8%E5%AD%B8math/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.數學math
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14.%E6%97%A5%E6%9C%9F%E5%92%8C%E6%99%82%E9%96%93datetime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.日期和時間datetime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15.%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E5%BC%8Fre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15.正規表示式re
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../16.%E6%AA%94%E6%A1%88%E8%99%95%E7%90%86os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16.檔案處理os
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    5.資料處理
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            5.資料處理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../17.Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17.Numpy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../18.Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18.Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../19.Matplotlib/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19.Matplotlib
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    6.單元測試
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            6.單元測試
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6/6.1pytest%20%E5%AD%B8%E7%BF%92%E6%8C%87%E5%8D%97%28%E5%9F%BA%E7%A4%8E%E7%AF%87%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pytest 學習指南(基礎篇)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6/6.2pytest%20%E5%AD%B8%E7%BF%92%E6%8C%87%E5%8D%97%28%E9%80%B2%E9%9A%8E%E7%AF%87%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pytest 學習指南(進階篇)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#anacondaminiforge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anaconda商用要收費了怎麼辦?我們可以改用Miniforge!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miniforge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miniforge 簡介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miniforge_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miniforge 安裝與使用教學
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Miniforge 安裝與使用教學">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      下載安裝檔
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miniforge_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用 Miniforge
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      補充說明
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="miniforge-anaconda">以開源 Miniforge 替代 Anaconda</h1>
+<h2 id="anacondaminiforge">Anaconda商用要收費了怎麼辦?我們可以改用Miniforge!</h2>
+<p>隨著企業規模擴大到超過200人，許多公司在使用 Anaconda 或 Miniconda 建構內部開發環境時，就必須面對商業授權的問題。雖然這兩款工具本身提供免費版本，但在大量使用或重度存取官方資源的情況下，就必須購買 Commercial、Team 或 Enterprise 授權。</p>
+<div class="admonition note">
+<p class="admonition-title">Note<p>參考: <a href="https://www.anaconda.com/blog/is-conda-free">Is conda Free?</a></p>
+</p>
+</div>
+<p>因此，採用完全開源且社群主導的 Miniforge 成為一個更安全且靈活的替代方案。Miniforge 不僅保留了 Anaconda/Miniconda 的核心功能（例如 conda 套件管理、環境建立與管理），同時避免了商用授權的不確定性與未來收費規範收緊的潛在風險。</p>
+<p><img alt="" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*vSN4f1iapNT24YFuZia2DA.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note<p>個人、學術用途及小型企業皆可繼續免費使用 Anaconda</p>
+</p>
+</div>
+<h2 id="miniforge">Miniforge 簡介</h2>
+<p>Miniforge 為一款完全開源的 Conda 發行版，其主要特點包括：</p>
+<ul>
+<li><strong>開源授權</strong>：全數採用開源模式，企業無需擔心因商業使用而觸發授權問題。</li>
+<li><strong>核心工具一致</strong>：Miniforge 所內建的 conda 與 Anaconda/Miniconda 完全相同，因此在套件安裝、升級、移除與虛擬環境管理方面均無縫相容。</li>
+<li><strong>社群主導</strong>：所有套件皆透過 GitHub 進行管理與托管，可以使用 conda-forge 作為下載頻道(必須要手動指定channel)，能有效避開官方 repository 帶來的商業風險。</li>
+<li><strong>輕量且靈活</strong>：除了基本功能外，Miniforge 還支援 mamba（快速的套件安裝工具）、PyPy 等其他執行環境，提供更多彈性與效率。</li>
+</ul>
+<hr />
+<h2 id="miniforge_1">Miniforge 安裝與使用教學</h2>
+<p>Miniforge 提供對應各種作業系統的安裝檔案，不論你使用 Windows、macOS 或 Linux，都能依據作業系統下載適合的版本。</p>
+<h3 id="_1">下載安裝檔</h3>
+<ol>
+<li>前往 Miniforge 的 GitHub 發行頁面：<a href="https://github.com/conda-forge/miniforge/releases">Miniforge Releases</a>。</li>
+<li>根據你所使用的作業系統選擇對應的安裝檔：</li>
+<li><strong>Windows</strong>：通常為 <code>.exe</code> 檔案。</li>
+<li><strong>macOS 與 Linux</strong>：多為 <code>.sh</code> 腳本檔案，依系統架構（如 x86_64、arm64）選擇合適版本。</li>
+</ol>
+<p>下載完成後，直接雙擊執行安裝程式（或在終端機中執行腳本檔案）。依照圖形化介面的指示完成安裝：
+- 閱讀並同意授權條款。
+- 選擇安裝路徑，預設或依需求自訂安裝位置。
+- 按下「安裝」後，等待安裝程序完成。</p>
+<h3 id="miniforge_2">使用 Miniforge</h3>
+<p>安裝完成後，依照你的作業系統開啟對應的終端機或命令提示字元：</p>
+<ul>
+<li>Windows 用戶可在開始選單中找到「Miniforge Prompt」。</li>
+<li>macOS 與 Linux 用戶則可直接在終端機中使用 conda 指令。</li>
+</ul>
+<p>根據前文介紹，miniforge 預設整合了 conda 與 mamba 兩款套件管理工具。其中，mamba 不僅能夠完整取代 conda 的功能，其執行速度也更為迅捷。使用時，只需要將平常使用的 conda 指令中的「conda」改成 mamba，即可實現同樣的操作接下來，可依照以下步驟使用 Miniforge 管理環境與安裝套件：</p>
+<ul>
+<li><strong>建立虛擬環境：</strong></li>
+</ul>
+<p><code>mamba create -n myenv python=3.11</code></p>
+<ul>
+<li><strong>啟動虛擬環境：</strong></li>
+</ul>
+<p><code>mamba activate myenv</code></p>
+<ul>
+<li><strong>安裝所需套件：</strong></li>
+</ul>
+<p><code>mamba install numpy pandas matplotlib</code></p>
+<ul>
+<li><strong>退出虛擬環境：</strong></li>
+</ul>
+<p><code>mamba deactivate</code></p>
+<ul>
+<li><strong>查看已有的虛擬環境</strong></li>
+</ul>
+<p><code>mamba env list</code></p>
+<ul>
+<li><strong>更新 Conda 與所有已安裝套件：</strong></li>
+</ul>
+<p><code>mamba update conda  
+  mamba update --all</code></p>
+<p>這些操作均與 Anaconda/Miniconda 完全一致，讓原有的工作流程無縫轉移至 Miniforge 平台，確保既有開發環境的穩定與便利。
+此外，Miniforge 也支援 mamba。實際上，mamba 是 conda 的高效替代品，兩者在語法上完全相容，你可以將所有 conda 指令直接替換成 mamba 指令。mamba 採用 C++ 編寫，並利用 libsolv 進行依賴解析，因此在解決依賴關係與安裝套件的速度上，比 conda 快了許多。對於需要頻繁安裝或更新大量套件的開發流程，mamba 能夠大幅提升效率，讓開發環境的維護更加順暢。</p>
+<h2 id="_2">補充說明</h2>
+<p>當你使用指令</p>
+<div class="codehilite"><pre><span></span><code>mamba create -n myenv python=3.11
+</code></pre></div>
+
+<p>時，mamba 會依據預設設定的 channel 來下載安裝套件，而預設就包含了 <code>repo.anaconda.com</code> 這個由 Anaconda.com 提供的商用 channel，因此會跳出警告訊息：</p>
+<div class="codehilite"><pre><span></span><code>warning libmamba &#39;repo.anaconda.com&#39;, a commercial channel hosted by Anaconda.com, is used.
+</code></pre></div>
+
+<p>若公司環境對商業授權有要求，為了避免不必要的法律風險或授權爭議，<strong>建議改用社群廣泛使用的 <code>conda-forge</code> channel</strong>。你可以採用以下指令：</p>
+<div class="codehilite"><pre><span></span><code>mamba create -n myenv python=3.11 --override-channels -c conda-forge
+</code></pre></div>
+
+<p>這個指令的作用說明如下：</p>
+<ul>
+<li><code>--override-channels</code>：此參數告訴 mamba 忽略預設的所有 channels，只採用後續指定的 channel。</li>
+<li><code>-c conda-forge</code>：指定使用 <code>conda-forge</code> 這個 channel 來下載並安裝所有套件。</li>
+</ul>
+<p>這樣就能完全避開 Anaconda 預設的商用 channel，符合公司對商業授權的需求。</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2018 - 2024 10程式中
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+        <script src="../../javascripts/analytics.js"></script>
+      
+    
+  </body>
+</html>
